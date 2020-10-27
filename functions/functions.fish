@@ -76,12 +76,12 @@ function newSandbox -a type
  if test -e ~/Dev/_sandbox/(date +'%Y-%m-%d')
      cd (date +'%Y-%m-%d')
      touch script(math (count *."$type"))."$type"
-     sublime .
+     charm .
  else
      mkdir (date +'%Y-%m-%d')
      cd (date +'%Y-%m-%d')
      touch script0."$type"
-     sublime .
+     charm .
  end
 end
 
