@@ -2,13 +2,13 @@
 
 function clonePgLocal -a new_db target_db
   set -l origin (pwd)
+  set_psql_folder
   cd ~/Dev/_psql_scripts
   if test -n "$target_db"
     set -a tdb "$target_db"
   else
     set -l tdb dev_local
   end
-  set_psql_folder
   if not test -e (pwd)/copy_pg.sql
     echo clone_pg.sql not found in (pwd)
     echo Writing clone_pg.sql
