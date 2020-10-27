@@ -8,15 +8,18 @@ function clonePgLocal -a new_db target_db
   else
     set -l tdb dev_local
   end
+  set_psql_folder
   if not test -e (pwd)/copy_pg.sql
     echo clone_pg.sql not found in (pwd)
-  else
-    set -l script (string split '%' (cat (pwd)/copy_pg.sql))
-    echo > temp.sql $script[1] "$new_db" $script[2] $tdb $script[3]
-    psql -U jakobbellamy -a -f (pwd)/temp.sql
-    rm temp.sql
-    cd $origin
+    echo Writing clone_pg.sql
+    echo > clone_pg.sql create database % with template % owner jakobbellamy;
+    echo 'complete :)'
   end
+  set -l script (string split '%' (cat (pwd)/copy_pg.sql))
+  echo > temp.sql $script[1] "$new_db" $script[2] $tdb $script[3]
+  psql -U jakobbellamy -a -f (pwd)/temp.sql
+  rm temp.sql
+  cd $origin
 end
 
 function clonePgHeroku -a new_db target_db
@@ -24,6 +27,15 @@ function clonePgHeroku -a new_db target_db
     heroku pg:pull DATABASE_URL "$new_db" -a "$target_db"
   else
     heroku pg:pull DATABASE_URL "$new_db" -a djsupreme
+  end
+end
+
+function set_psql_folder
+  if not test -e ~/Dev/
+    mkdir ~/Dev/
+  end
+  if not test -e ~/Dev/_psql_scripts/
+    mkdir ~/Dev/_psql_scripts/
   end
 end
 
