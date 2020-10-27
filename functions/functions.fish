@@ -43,7 +43,6 @@ function newBranch -a branch
   git push --set-upstream origin $branch
 end
 
-#remove all files in current directory
 function rmAll
    set -l arr (ls *)
    for file in $arr
@@ -92,7 +91,6 @@ function writeTo -a file string
   echo > $file $string
 end
 
-#ls penetrate
 function lsPen
   for dir in (find * -maxdepth 0 -type d);
      for file in (ls $dir);
