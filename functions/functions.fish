@@ -1,4 +1,4 @@
-#Functions-------------------------|
+#Functions------------------------------------------------------|
 
 function clonePgLocal -a new_db target_db
   set -l origin (pwd)
@@ -36,7 +36,6 @@ function agit -a message
   end
   git push
 end
-
 
 function newBranch -a branch
   git checkout -b "$branch"
@@ -99,7 +98,7 @@ function lsPen
    end
  end
 
-#aliases--------------------------------------|
+#aliases------------------------------------------------------|
 alias environ='charm ~/Dev/env_vars/.env'
 alias confish='charm /Users/jakobbellamy/.config/fish/'
 alias dev='cd ~/Dev/'
