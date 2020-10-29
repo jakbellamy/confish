@@ -49,6 +49,13 @@ function agit -a message
   git push
 end
 
+function adb -a message
+  set -l origin (pwd)
+  dbdir
+  agit
+  cd $origin
+end
+
 function newBranch -a branch
   git checkout -b "$branch"
   git push --set-upstream origin $branch
