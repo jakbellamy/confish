@@ -137,3 +137,4 @@ alias dbdir='cd ~/Library/"Application Support"/JetBrains/DataGrip2020.1/console
 alias drop='ssh root@192.241.157.94'
 alias hub='cd ~/Dev/_supreme/doc_reader'
 alias com='python ~/Dev/_supreme/doc_reader/index.py'
+alias jn='jupyter notebook'
