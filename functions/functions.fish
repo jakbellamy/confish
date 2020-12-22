@@ -119,7 +119,7 @@ function lsPen
 
 #aliases------------------------------------------------------|
 alias environ='charm ~/Dev/env_vars/.env'
-alias confish='charm /Users/jakobbellamy/.config/fish/'
+alias confish='nano /Users/jakobbellamy/.config/fish/functions/functions.fish'
 alias dev='cd ~/Dev/'
 alias py=/usr/local/bin/python3
 alias runserver='python manage.py runserver'
