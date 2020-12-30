@@ -1,4 +1,4 @@
-#Functions------------------------------------------------------|
+# Functions------------------------------------------------------|
 
 function clonePgLocal -a new_db target_db
   set -l origin (pwd)
@@ -120,6 +120,7 @@ function lsPen
 #aliases------------------------------------------------------|
 alias environ='charm ~/Dev/env_vars/.env'
 alias confish='nano /Users/jakobbellamy/.config/fish/functions/functions.fish'
+alias comfish='cd /Users/jakobbellamy/.config/fish && agit && cd'
 alias dev='cd ~/Dev/'
 alias py=/usr/local/bin/python3
 alias runserver='python manage.py runserver'
